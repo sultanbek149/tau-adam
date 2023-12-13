@@ -16,7 +16,7 @@ form.addEventListener('submit', e => {
         .catch(err => showAlert('Қате', false))
 
     clearFields()
-    setTimeout(goTo, 3000)
+    goTo()
 
 })
 
