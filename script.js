@@ -10,13 +10,14 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(url, { method: 'POST', body: new FormData(form) })
         .then(resp => {
-
-            clearFields()
             showAlert('Сіздің сұрауыңыз қабылданды!', true)
-            setTimeout(goTo, 3000)
             return resp
         })
         .catch(err => showAlert('Қате', false))
+
+    clearFields()
+    setTimeout(goTo, 3000)
+
 })
 
 
