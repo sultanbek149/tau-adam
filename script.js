@@ -11,8 +11,9 @@ form.addEventListener('submit', e => {
     fetch(url, { method: 'POST', body: new FormData(form) })
         .then(resp => {
 
-            showAlert('Сіздің сұрауыңыз қабылданды!',true)
             clearFields()
+            showAlert('Сіздің сұрауыңыз қабылданды!', true)
+            setTimeout(goTo, 3000)
             return resp
         })
         .catch(err => showAlert('Қате', false))
@@ -35,4 +36,11 @@ const clearFields = () => {
     username.value = '';
     email.value = '';
     tel.value = '';
+}
+
+const goTo = () => {
+    const url =
+        'https://wa.me/77786485054' + '?text=Сәлеметсіз бе?! ТАУ АДАМ конференциясына қатысқым келеді, толық ақпарат берсеңіз…%0a%0a';
+
+    window.open(url, '_blank').focus()
 }

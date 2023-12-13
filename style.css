@@ -84,13 +84,13 @@ img {
 }
 
 .info > .img-holder {
-  width: 55%;
+  flex: 1;
 }
 
 .img-holder {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 8px;
+  row-gap: 5px;
   position: relative;
 }
 
@@ -106,7 +106,7 @@ img {
 
 .img-holder .item p {
   position: absolute;
-  font-size: 6px;
+  font-size: clamp(0.3125rem, -0.1875rem + 2.5vw, 0.625rem);
   font-weight: 600;
   font-style: italic;
   color: #000;
@@ -338,4 +338,56 @@ input::placeholder {
   padding: 20px;
   border-radius: 3px;
   width: 100%;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.alert-message {
+  position: fixed;
+  top: -5%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-animation: showOut 2.5s ease-out;
+  animation: showOut 2.5s ease-out;
+  z-index: 1003;
+}
+
+@keyframes showOut {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
+  20%,
+  100% {
+    -webkit-transform: translate(-50%, 115%);
+    transform: translate(-50%, 115%);
+  }
+}
+
+
+.submit {
+  cursor: pointer;
 }
