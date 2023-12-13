@@ -154,6 +154,12 @@
                     Алдыңғы қатардан арнайы орындар.
                 </div>
 
+                <div class="item">
+                    <img src="https://static.tildacdn.info/tild3066-6130-4836-b830-383135313638/Group_200.svg" alt="as">
+                    Құны 45.000тг болатын, қыздарға байланысты курс сыйлыққа беріледі.
+                </div>
+
+
                 <div class="price">
                     32.000тг
                 </div>
@@ -165,13 +171,14 @@
         </section>
 
         <section class="form">
-                <h5>Тіркеліңдер</h5>
+            <h5>Тіркелу</h5>
 
-            <form method="post">
-                <input type="text" placeholder="Аты-жөні">
-                <input type="mail" placeholder="Электрондық пошта">
-                <input type="tel" placeholder="Телефон номері">
-                <button>Тіркелу</button>
+            <form method="post" id="form">
+                <input  id="name" name="name" type="text" placeholder="Аты-жөні" required>
+                <input id="email" name="email" type="email" placeholder="Электрондық пошта" required>
+                <input id="tel" name="tel" type="tel" placeholder="Телефон номері" required
+                    autocomplete="off">
+                <button class="submit" type="submit">Тіркелу</button>
             </form>
         </section>
     </div>
